@@ -39,7 +39,6 @@ async def index() -> Template:
 @get("/items")
 async def list_items() -> Template:
     items = await collection.find().to_list(length=None)
-    print(items)
     return Template(template_name="items.html", context={"items": items})
 
 
