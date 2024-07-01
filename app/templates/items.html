@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Items{% endblock %} {% block content
+%}
+<div class="card bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h1 class="card-title text-3xl mb-4">Items</h1>
+    <a href="/items/new" class="btn btn-primary mb-4">Add New Item</a>
+    <ul class="menu bg-base-200 rounded-box">
+      {% for item in items %}
+      <li>
+        <div class="flex justify-between items-center w-full">
+          <a href="/items/{{ item._id }}" class="flex-grow">{{ item.name }}</a>
+          <div>
+            <a
+              href="/items/{{ item._id }}/edit"
+              class="btn btn-sm btn-outline btn-info"
+              >Edit</a
+            >
+            <button
+              hx-delete="/items/{{ item._id }}"
+              hx-target="closest li"
+              hx-swap="outerHTML"
+              class="btn btn-sm btn-outline btn-error"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

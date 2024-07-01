@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %}{% if item %}Edit Item{% else %}New
+Item{% endif %}{% endblock %} {% block content %}
+<div class="card bg-base-100 shadow-xl max-w-md mx-auto">
+  <div class="card-body">
+    <h1 class="card-title text-2xl mb-4">
+      {% if item %}Edit Item{% else %}New Item{% endif %}
+    </h1>
+    <form class="space-y-4">
+      {% if item %}
+      <input type="hidden" name="_method" value="PUT" />
+      {% endif %}
+      <div class="form-control">
+        <label for="name" class="label">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="{{ item.name if item else '' }}"
+          required
+          class="input input-bordered"
+        />
+      </div>
+      <div class="form-control">
+        <label for="description" class="label">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          class="textarea textarea-bordered"
+        >
+{{ item.description if item else '' }}</textarea
+        >
+      </div>
+      <div class="form-control mt-6">
+        <button
+          type="button"
+          class="btn btn-primary"
+          {%
+          if
+          item
+          %}
+          hx-put="/items/{{ item._id }}"
+          {%
+          else
+          %}
+          hx-post="/items"
+          {%
+          endif
+          %}
+          hx-trigger="click"
+        >
+          {% if item %}Update{% else %}Create{% endif %} Item
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
