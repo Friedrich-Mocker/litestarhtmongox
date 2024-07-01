@@ -22,21 +22,27 @@ Follow these steps to get your development environment ready:
 
 1. Clone the repository:
 
-git clone https://github.com/yourusername/litestar-htmx-mongodb-example.git
+```git clone https://github.com/yourusername/litestar-htmx-mongodb-example.git
 cd litestar-htmx-mongodb-example
+```
 
 2. Create and activate a virtual environment:
 
-python -m venv venv
+```python -m venv venv
 source venv/bin/activate # On Windows use `venv\Scripts\activate`
+```
 
 3. Install the required packages:
 
-pip install litestar pymongo motor uvicorn
+```pip install litestar pymongo motor uvicorn
+
+```
 
 4. Start MongoDB using Docker Compose:
 
-docker-compose up -d
+```docker-compose up -d
+
+```
 
 This will launch a MongoDB instance using the configuration in the `docker-compose.yml` file.
 
@@ -44,7 +50,9 @@ This will launch a MongoDB instance using the configuration in the `docker-compo
 
 1. Start the Litestar server using Uvicorn:
 
-uvicorn app.main:app --reload
+```uvicorn app.main:app --reload
+
+```
 
 2. Open your web browser and navigate to `http://localhost:8000`
 
