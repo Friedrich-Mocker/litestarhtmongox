@@ -23,8 +23,8 @@ Follow these steps to get your development environment ready:
 1. Clone the repository:
 
 ```
-git clone https://github.com/yourusername/litestar-htmx-mongodb-example.git
-cd litestar-htmx-mongodb-example
+git clone https://github.com/Friedrich-Mocker/litestarhtmongox.git
+cd litestarhtmongox
 ```
 
 2. Create and activate a virtual environment:
