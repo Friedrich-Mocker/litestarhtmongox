@@ -69,14 +69,6 @@ Our project is organized as follows:
 - `static/`: Static files (CSS, JS, etc.)
 - `docker-compose.yml`: Docker Compose configuration for MongoDB
 
-## 🤝 Contributing
-
-We welcome contributions! Feel free to submit issues or pull requests if you have any improvements or find any bugs. Let's make this project even better together!
-
 ## 📄 License
 
 This project is open-source and available under the MIT License. Feel free to use, modify, and distribute it as you see fit!
-
----
-
-Happy coding! 🎉 If you have any questions or need further assistance, don't hesitate to reach out.
